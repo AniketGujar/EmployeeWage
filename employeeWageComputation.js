@@ -7,7 +7,7 @@ function attendence() {
         console.log("Employee is Present");
     }
     else {
-        console.log("Employee is Present");
+        console.log("Employee is Absent");
     }
 }
 
