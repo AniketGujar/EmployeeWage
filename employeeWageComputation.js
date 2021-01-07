@@ -17,17 +17,17 @@ function attendence() {
 
         switch (employee_Attendence) {
             case 0:
-                console.log("Employee is Present \t\t Daily Wage = " + HOUR_WAGE * FULL_DAY_WORKING_HOURS);
+                console.log("Day "+totalWorkingDays+ "\t\tEmployee is Present \t\t Daily Wage = " + HOUR_WAGE * FULL_DAY_WORKING_HOURS);
                 totalWorkingHours += FULL_DAY_WORKING_HOURS;
                 totalWage+=HOUR_WAGE * FULL_DAY_WORKING_HOURS;
                 break;
             case 1:
-                console.log("Employee is Present Part Time \t Daily Wage = " + HOUR_WAGE * PART_TIME_WORKING_HOURS);
+                console.log("Day "+totalWorkingDays+"\t\tEmployee is Present Part Time \t Daily Wage = " + HOUR_WAGE * PART_TIME_WORKING_HOURS);
                 totalWorkingHours += PART_TIME_WORKING_HOURS;
                 totalWage+=HOUR_WAGE* PART_TIME_WORKING_HOURS;
                 break;
             case 2:
-                console.log("Employee is Absent \t\t Daily Wage = 0");
+                console.log("Day "+totalWorkingDays+"\t\tEmployee is Absent \t\t Daily Wage = 0");
                 break;
         }
     }
