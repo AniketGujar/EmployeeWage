@@ -1,4 +1,5 @@
 console.log("Welcome to Employee Wage Computation Program");
+
 const FULL_DAY_WAGE = 20;
 const FULL_DAY_WORKING_HOURS = 8;
 const PART_TIME_WORKING_HOURS = 4;
@@ -10,6 +11,7 @@ let totalWorkingDays = 0;
 function attendence() {
 
     for (totalWorkingDays = 1; totalWorkingDays < MAX_WORKING_DAYS && totalWorkingHours <= MAX_WORKING_HOURS; totalWorkingDays++) {
+
         let employee_Attendence = Math.floor(Math.random() * 3);
 
         switch (employee_Attendence) {
@@ -29,5 +31,6 @@ function attendence() {
 }
 
 attendence();
+
 console.log("Total Working Hours = " + totalWorkingHours);
 console.log("Total Working Days = " + totalWorkingDays);
