@@ -9,28 +9,37 @@ let totalWorkingHours = 0;
 let totalWorkingDays = 0;
 let totalWage = 0;
 
-function attendence() {
-
+attendence = () => {
     for (totalWorkingDays = 1; totalWorkingDays < MAX_WORKING_DAYS && totalWorkingHours <= MAX_WORKING_HOURS; totalWorkingDays++) {
-
-        let employee_Attendence = Math.floor(Math.random() * 3);
-
-        switch (employee_Attendence) {
+        let employeeAttendence = Math.floor(Math.random() * 4);
+        switch (employeeAttendence) {
             case 0:
-                console.log("Day " + totalWorkingDays + "\t\tEmployee is Present \t\t Daily Wage = " + HOUR_WAGE * FULL_DAY_WORKING_HOURS);
-                totalWorkingHours += FULL_DAY_WORKING_HOURS;
-                totalWage += HOUR_WAGE * FULL_DAY_WORKING_HOURS;
+                console.log("Employee is Absent \t\t Daily Wage = 0");
                 break;
-            case 1:
-                console.log("Day " + totalWorkingDays + "\t\tEmployee is Present Part Time \t Daily Wage = " + HOUR_WAGE * PART_TIME_WORKING_HOURS);
-                totalWorkingHours += PART_TIME_WORKING_HOURS;
-                totalWage += HOUR_WAGE * PART_TIME_WORKING_HOURS;
-                break;
-            case 2:
-                console.log("Day " + totalWorkingDays + "\t\tEmployee is Absent \t\t Daily Wage = 0");
-                break;
+            default:
+                checkWorkingTime();
         }
     }
+}
+
+checkWorkingTime = () => {
+
+    let employeeWorkingTime = Math.floor(Math.random() * 2);
+
+    switch (employeeWorkingTime) {
+        case 0:
+            console.log("Employee is Present Full Time \t Daily Wage = " + FULL_DAY_WAGE * FULL_DAY_WORKING_HOURS);
+            getWorkingHours(FULL_DAY_WORKING_HOURS);
+            break;
+        case 1:
+            console.log("Employee is Present Part Time \t Daily Wage = " + FULL_DAY_WAGE * PART_TIME_WORKING_HOURS);
+            getWorkingHours(PART_TIME_WORKING_HOURS);
+            break;
+    }
+}
+
+getWorkingHours = (workingHours) => {
+    totalWorkingHours += workingHours;
 }
 
 attendence();
